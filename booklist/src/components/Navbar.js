@@ -5,7 +5,11 @@ const Navbar = () => {
     const { books } = useContext(BookContext)
     return(
         <div>
-            You have {books.length} books left to get through!
+        { books.length>0 ? (
+            <div>You have {books.length} books left to get through!</div>
+        ) : (
+            <div className = 'empty'>You have no books left!</div>
+        ) }
         </div>
     )
 }

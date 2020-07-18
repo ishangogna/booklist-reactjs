@@ -1,16 +1,16 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { BookContext } from '../contexts/BookContext';
 
 const BookDetails = ({ book }) => {
+    const { removeBook } = useContext(BookContext)
     return ( 
-        <div>
+        <div onClick = {()=>removeBook(book.id)}>
             <div className = 'title'>
                 { book.title }
             </div>
             <div className = 'author'>
                 { book.author }
             </div>
-            
         </div>
      );
 }
